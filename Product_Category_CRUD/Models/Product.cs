@@ -11,7 +11,6 @@ namespace Product_Category_CRUD.Models
         public string? Name { get; set; }
         [Required]
         public int Price { get; set; }
-        [Required]
         public string? Imageurl { get; set; }
         [Required]
         [Display(Name = "Category Name")]
