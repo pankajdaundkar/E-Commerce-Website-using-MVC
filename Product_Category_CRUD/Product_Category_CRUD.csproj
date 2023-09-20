@@ -7,12 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    <Content Remove="wwwroot\images\Emp1.jpeg" />
+    <Content Remove="wwwroot\images\emp2.png" />
+    <Content Remove="wwwroot\images\Emp3.jpeg" />
+    <Content Remove="wwwroot\images\emp4.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\" />
+    <None Include="wwwroot\images\Emp1.jpeg" />
+    <None Include="wwwroot\images\emp2.png" />
+    <None Include="wwwroot\images\Emp3.jpeg" />
+    <None Include="wwwroot\images\emp4.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Product_Category_CRUD.Models.Product>
+
+@{
+    ViewData["Title"] = "ProductList";
+}
+@{
+    ViewData["Title"] = "Index";
+    Pager pager = new Pager();
+    int pageNo = 0;
+
+    if (ViewBag.Pager != null)
+    {
+
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+
+    }
+}
+<div class="container">
+    @if (pager.TotalPages > 0)
+    {
+        <ul class="pagination justify-content-end">
+            @for (var pge = pager.StartPage; pge <= pager.EndPage; pge++)
+            {
+                <li class="page-item @(pge == pager.CurrentPage ? "active" : "")">
+                    <a class="page-link" asp-controller="User" asp-action="ProductList" asp-route-pg="@pge"> @pge </a>
+                </li>
+            }
+        </ul>
+    }
+</div>
+
+     
+    <div class="container">
+        <div class="row">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="@Url.Content(item.Imageurl)" height="150" width="200" />
+                        <div class="card-body">
+                            <p class="card-title">
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </p>
+                            <p class="card-title">
+                                Price:@Html.DisplayFor(modelItem => item.Price)
+                            </p>
+                            <p class="card-title">
+                                Category:@Html.DisplayFor(modelItem => item.Cname)
+
+                            </p>
+
+                        <a href="/Cart/AddToCart/@item.Id" class="btn btn-warning">Add to cart </a>&nbsp;
+                      <a href="/User/ProductDescription/@item.Id" class="btn  btn-primary">View more </a>
+
+                        </div>
+                    </div>
+
+                </div>
+            }
+        </div>
+    </div>
+}

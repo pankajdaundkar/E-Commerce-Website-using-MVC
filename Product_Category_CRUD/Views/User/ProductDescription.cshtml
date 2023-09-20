@@ -1,0 +1,119 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Product_Category_CRUD.Models.Product
+
+<div class="container-fluid1">
+
+<div class="row">
+
+    <div class="col-md-4">
+        @* <img src="k1.webp" alt="Alternate Text" height="450px" width="400px " class="mainImg" />*@
+
+        <img src="@Url.Content(Model.Imageurl)" height="350" width="350" />
+
+        <div>
+                <a href="/Cart/AddToCart/@Model.Id" class="btn btn-warning">Add to cart </a>&nbsp;
+                <a href="#" class="btn btn-success">BuyNow </a>&nbsp;
+
+                @*<button class="btn1"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add to cart</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn2"><i class="fa fa-bolt" aria-hidden="true"></i>Buy Now</button>*@
+        </div>
+
+
+    </div>
+    <div class="col-md-6 scroll">
+        <h1><b>@Model.Name</b></h1>
+        <div>
+            <button class="rating">
+                4.4<i class="fa fa-star" aria-hidden="true"></i>
+
+            </button>
+            32,012 Ratings & 3,301 Reviews
+        </div>
+        <p class="offer">Extra ₹350 off</p>
+        <div>
+            <b id="rate">
+                Price:<span>@Model.Price</span>
+            </b>&nbsp;&nbsp;  60% off
+        </div>
+        <h6>Available offers</h6>
+        <div><i class="fa fa-tag" aria-hidden="true"></i><b>Bank Offer</b>5% Cashback on Flipkart Axis Bank Card <a id="tnc" href="https://www.flipkart.com/pages/returnpolicy">T&C</a></div>
+        <div><i class="fa fa-tag" aria-hidden="true"></i><b>Special Price</b>Get extra ₹350 off (price inclusive of cashback/coupon) <a id="tnc" href="https://www.flipkart.com/pages/returnpolicy">T&C</a></div>
+        <div><i class="fa fa-tag" aria-hidden="true"></i><b>Extra ₹500 Off</b> on Bikes & Scooters on purchase of ₹30,000 or more <a id="tnc" href="https://www.flipkart.com/pages/returnpolicy">T&C</a></div>
+        <div><i class="fa fa-tag" aria-hidden="true"></i><b>Partner Offer</b>Sign-up for Pay Later & get free Times Prime Benefits worth ₹10,000* <a id="tnc" href="https://www.flipkart.com/pages/returnpolicy">know more</a></div>
+        <div><i class="fa fa-tag" aria-hidden="true"></i><b>Partner Offer</b>Earn extra Supercoins on buying the item<a id="tnc" href="https://www.flipkart.com/pages/returnpolicy">know more</a></div>
+        <div><i class="fa fa-tag" aria-hidden="true"></i><b>Partner Offer</b>Purchase now & get 1 surprise cashback coupon in Future<a id="tnc" href="https://www.flipkart.com/pages/returnpolicy">know more</a></div>
+        <br /><br />
+        <!--<img src="havells.png" class="hlv" alt="Alternate Text" />-->
+        <1 Year Comprehensive Warranty <a id="tnc" href="https://www.flipkart.com/pages/returnpolicy">know more</a>-->
+        <table cellpadding="30" cellspacing="30">
+            <tr>
+                <td>
+                    1 Year Comprehensive Warranty <a id="tnc" href="https://www.flipkart.com/pages/returnpolicy">know more</a>
+                </td>
+            </tr>
+
+            <tr>
+                @*<td>Color</td>
+                <td>
+                    <img src="" alt="Alternate Text" id="colour" />
+                    <img src="" alt="Alternate Text" id="colour" />
+                </td>*@
+            </tr>
+            <tr>
+                <td>Delivery</td>
+                <td>
+                    <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+                    <input type="text" height="10px" width="70px" placeholder="Enter your pincode here" />
+                    <h6><b>Delivery by25 Aug, Friday</b><p id="tnc">View Details</p></h6>
+                </td>
+            </tr>
+            <tr>
+                <td>Highlights</td>
+                <td>
+                    <ul type="disc">
+                        <li>Material: Stainless Steel, Plastic</li>
+                        <li>Water, Tea & Soups</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Category</td>
+                <td>
+                    <b> &nbsp;&nbsp @Model.Cname</b>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Easy Payment Options
+                </td>
+                <td>
+                    <ul type="disc">
+                        <li>Cash on Delivery</li>
+                        <li>Net banking & Credit/ Debit/ ATM card</li>
+                        <li>BHIM UPI</li>
+                        <p id="tnc">View Details</p>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Seller</td>
+                <td>
+                    <p id="tnc">
+                        Geo Sales <button class="rating">
+                            4.9<i class="fa fa-star" aria-hidden="true"></i>
+
+                        </button>
+                    </p>
+                    <h6>7 Days Service Center Replacement/Repair</h6>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</div>
+</div>
+}

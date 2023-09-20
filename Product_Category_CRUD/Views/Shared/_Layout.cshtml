@@ -3,16 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Product_Category_CRUD</title>
+    <title>@ViewData["Title"] - EcommerceWebsite</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Product_Category_CRUD.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/EcommerceWebsite.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-primary border-bottom box-shadow mb-3 nav1">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Product_Category_CRUD</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,17 +21,56 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><h3><b><img src="~/images/flipcart.jpeg" height="50px" width="200px" /></b></h3></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><b><i class="fa fa-home" aria-hidden="true"></i> Home </b></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Category List</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy"><b>Privacy</b></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Product List</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="ContactUs"><b> <i class="fa-solid fa-phone"></i> Contact Us</b></a>
                         </li>
+                        @if (httpcontextAccessor.HttpContext.Session.GetString("roll_id") == "1")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index"><b>Category List</b></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index"><b>Product List</b>t</a>
+                            </li>                            
+                        }
+                        
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                   
+                        @if (string.IsNullOrEmpty(httpcontextAccessor.HttpContext.Session.GetString("uid")))
+                        {
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Register"><b> <i class="fa-solid fa-address-card"></i> Register</b></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Login"><b>Login <i class="fa-solid fa-right-to-bracket"></i></b></a>
+                            </li>
+                            
+                        }
+                        @if (!string.IsNullOrEmpty(httpcontextAccessor.HttpContext.Session.GetString("uid")))
+                        {
+                             <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Cart" asp-action="ViewCart"><b><i class="fa-solid fa-cart-plus"></i> Cart </b></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area=""> WelCome  @httpcontextAccessor.HttpContext.Session.GetString("user_name")</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Logout"><b>Logout <i class="fa-solid fa-circle-xmark"></i></b></a>
+                            </li>
+                            
+                        }
+
+                       
                     </ul>
                 </div>
             </div>
@@ -41,15 +81,90 @@
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - Product_Category_CRUD - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+   
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+<footer>
+    <div class="foot-panel1">
+        Back to Top
+    </div>
+    <div class="foot-panel2">
+        <ul>
+            <h3>
+                Get To Know Us
+            </h3>
+            <a>Careers</a>
+            <a>Blogs</a>
+            <a>About FilpCart</a>
+            <a>Investor Relations</a>
+            <a> FlipCart Devices</a>
+            <a> FlipCart  Scirnce</a>
+        </ul>
+
+        <ul>
+            <h3>
+                Connect with Us
+            </h3>
+            <a href="https://www.facebook.com/" class="text-white me-4">
+                <i class="fa fa-facebook-f"></i>       <b>Facebook</b>
+            </a>
+            <a href="https://twitter.com/" class="text-white me-4">
+                <i class="fa fa-twitter"></i>          <b>Twitter</b>
+            </a>
+            <a href="https://www.google.co.in/" class="text-white me-4">
+                <i class="fa fa-google"></i>           <b>Google</b>
+            </a>
+            <a href="https://www.instagram.com/" class="text-white me-4">
+                <i class="fa fa-instagram"></i>        <b>Instagram</b>
+            </a>
+            <a href="https://www.linkedin.com/" class="text-white me-4">
+                <i class="fa fa-linkedin"></i>         <b>Linkedin</b>
+            </a>
+
+
+        </ul>
+
+        <ul>
+            <h3>
+                Make Money with Us
+            </h3>
+            <a>Sell on FlipCart</a>
+            <a>Sell under FlipCart Accelerator</a>
+            <a>Protect and Build Your Brand</a>
+            <a>FlipCart Global Selling</a>
+            <a>Become an Affiliate</a>
+            <a>Fulfilment by FlipCart</a>
+            <a>Advertise Your Products</a>
+        </ul>
+
+        <ul>
+            <h3>
+                Let Us Help You
+            </h3>
+            <a>COVID-19 and FlipCart</a>
+            <a>Your Account</a>
+            <a>Returns Centre</a>
+            <a>100% Purchase Protection</a>
+            <a> FlipCart App Download</a>
+            <a>Help</a>
+        </ul>
+    </div>
+    <div class="foot-panel3">
+        <div class="logo"></div>
+    </div>
+
+    <div class="foot-panel4">
+        <div class="pages">
+            <a>Conditions Of Uses</a>
+            <a>Privacy Notice</a>
+            <a>Your Ads Privacy Chocies</a>
+        </div>
+        <div class="copywrite">
+            1996-2023, FlipCart.com, Inc. or its  affiliates
+        </div>
+    </div>
+</footer>

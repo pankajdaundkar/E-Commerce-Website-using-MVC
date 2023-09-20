@@ -1,18 +1,149 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color:aqua;
+}
+
+.cimg {
+    height: 400px;
+}
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color:#c6cdde;
+}
+
+.cimg {
+    height: 400px;
+}
+footer {
+    margin-top: 15px;
+}
+
+.foot-panel1 {
+    background-color: #37475a;
+    color: white;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.foot-panel2 {
+    background-color: #222f3d;
+    color: white;
+    height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+ul {
+    margin-top: 20px;
+}
+
+    ul a {
+        display: block;
+        color: #dddddd;
+        margin-top: 10px;
+    }
+.glam {
+    height: 80px;
+    margin-top: 20px;
+    font-size: xx-large;
+    font-weight: 800;
+    padding-left: 20px;
+    padding-top: 20px;
+    background-color: deepskyblue;
+    color: black;
+    text-align: center;
+}
+.glamimg {
+    height: 230px;
+    width: 230px;
+    /*    border: 2px solid black;*/
+    border-radius: 10px 10px;
+    opacity: inherit 0.4;
+    padding: 5px;
+    margin: 0PX;
+    margin-top: -50px;
+    margin-left: -20px;
+    text-align: center;
+}
+
+.beautyimg {
+    height: 450px;
+    width: 300px;
+    margin-left: -10px;
+}
+
+
+.foot-panel3 {
+    background-color: #222f3d;
+    color: white;
+    border-top: 0.5px solid white;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.foot-panel4 {
+    background-color: #0f1111;
+    color: white;
+    height: 80px;
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+.pages {
+    padding-top: 25px;
+}
+
+.copywrite {
+    padding-top: 5px;
+}
+.carousel-inner{
+    max-width:100% !important;
+   
+}
+p{
+    font-weight:700;
+}
+.nav1 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-top:-10px;
+    height:75px;
 }

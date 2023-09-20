@@ -2,7 +2,7 @@
 
 namespace Product_Category_CRUD.Models
 {
-    public class Product_CRUD
+    public class  Product_CRUD
     {
         SqlConnection con;
         SqlCommand cmd;
@@ -45,6 +45,7 @@ namespace Product_Category_CRUD.Models
             string qry = "select p.*, category.Cname from product p inner join Category category on category.cid = p.cid where p.id=@id";
             cmd = new SqlCommand(qry, con);
             cmd.Parameters.AddWithValue("@id", id);
+            
             con.Open();
             dr = cmd.ExecuteReader();
             if (dr.HasRows)
@@ -55,8 +56,9 @@ namespace Product_Category_CRUD.Models
                     p.Name = dr["name"].ToString();
                     p.Price = Convert.ToInt32(dr["price"]);
                     p.Imageurl = dr["imageurl"].ToString();
+                    //p.Quantity = Convert.ToInt32(dr["quantity"]);
                     p.Cid = Convert.ToInt32(dr["cid"]);
-                    p.Cname = dr["Cname"].ToString();
+                    p.Cname = dr["cname"].ToString();
                 }
             }
             con.Close();

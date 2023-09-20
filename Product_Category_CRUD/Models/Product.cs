@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Xml.Linq;
 
 namespace Product_Category_CRUD.Models
@@ -13,11 +14,23 @@ namespace Product_Category_CRUD.Models
         public int Price { get; set; }
         public string? Imageurl { get; set; }
         [Required]
-        [Display(Name = "Category Name")]
+        [Display(Name = "Category Cid")]
         public int Cid { get; set; }
         [Required]
         [Display(Name = "Category Name")]
         public string Cname { get; set; }
+        [NotMapped]
+        public int Quantity { get; set; }
+        [NotMapped]
+        public int? CartId { get; set; }
+
+        [NotMapped]
+        public DateTime? DateTime { get; set; }
+
+        [NotMapped]
+        public int OrderId { get; set; }
+
+        public int Uid { get; set; }
 
     }
 }
